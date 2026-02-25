@@ -36,24 +36,24 @@ const features = [
 export default function FeaturesSection() {
   return (
     <SectionWrapper id="what-titan-does">
-      <div className="text-center mb-16">
-        <p className="text-accent text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+      <div className="text-center mb-10 sm:mb-16">
+        <p className="text-accent text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-3 sm:mb-4">
           What TITAN Does
         </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight">
           Everything your card business needs, automated
         </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {features.map((f) => (
           <div
             key={f.title}
-            className="glass rounded-2xl p-7 hover:border-accent/30 transition-all duration-300"
+            className="glass rounded-2xl p-5 sm:p-7 hover:border-accent/30 transition-all duration-300"
           >
-            <h3 className="text-base font-semibold mb-3 leading-snug">
+            <h3 className="text-sm sm:text-base font-semibold mb-2 sm:mb-3 leading-snug">
               {f.title}
             </h3>
-            <p className="text-text-secondary text-sm leading-relaxed">
+            <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
               {f.description}
             </p>
           </div>

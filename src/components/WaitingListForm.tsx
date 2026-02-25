@@ -60,22 +60,26 @@ export default function WaitingListForm() {
     } catch (err) {
       setStatus("error");
       setErrorMsg(
-        err instanceof Error ? err.message : "Something went wrong. Please try again."
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again."
       );
     }
   }
 
   if (status === "success") {
     return (
-      <div className="bg-surface border border-status-green/30 rounded-xl p-8 text-center max-w-md mx-auto">
-        <h3 className="text-xl font-semibold mb-2">You&apos;re on the list!</h3>
-        <p className="text-text-secondary text-sm">
+      <div className="bg-surface border border-status-green/30 rounded-xl p-6 sm:p-8 text-center max-w-md mx-auto">
+        <h3 className="text-lg sm:text-xl font-semibold mb-2">
+          You&apos;re on the list!
+        </h3>
+        <p className="text-text-secondary text-xs sm:text-sm">
           Check your inbox for a welcome email. We&apos;ll notify you when TITAN
           is ready.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-4 text-accent text-sm underline underline-offset-2"
+          className="mt-4 text-accent text-xs sm:text-sm underline underline-offset-2"
         >
           Sign up another email
         </button>
@@ -86,13 +90,13 @@ export default function WaitingListForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-surface border border-divider rounded-xl p-8 max-w-md mx-auto"
+      className="bg-surface border border-divider rounded-xl p-5 sm:p-8 max-w-md mx-auto"
     >
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium mb-1.5 text-text-secondary"
+            className="block text-xs sm:text-sm font-medium mb-1 sm:mb-1.5 text-text-secondary"
           >
             Email *
           </label>
@@ -103,13 +107,13 @@ export default function WaitingListForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="w-full bg-surface2 border border-divider rounded-lg px-4 py-3 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent transition-colors"
+            className="w-full bg-surface2 border border-divider rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent transition-colors"
           />
         </div>
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium mb-1.5 text-text-secondary"
+            className="block text-xs sm:text-sm font-medium mb-1 sm:mb-1.5 text-text-secondary"
           >
             Name (optional)
           </label>
@@ -119,19 +123,19 @@ export default function WaitingListForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Your name"
-            className="w-full bg-surface2 border border-divider rounded-lg px-4 py-3 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent transition-colors"
+            className="w-full bg-surface2 border border-divider rounded-lg px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-text-primary placeholder:text-text-secondary/50 focus:outline-none focus:border-accent transition-colors"
           />
         </div>
       </div>
 
       {status === "error" && (
-        <p className="text-red-400 text-sm mt-3">{errorMsg}</p>
+        <p className="text-red-400 text-xs sm:text-sm mt-3">{errorMsg}</p>
       )}
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full mt-6 bg-accent text-background font-semibold py-3.5 rounded-xl text-base hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full mt-5 sm:mt-6 bg-accent text-background font-semibold py-3 sm:py-3.5 rounded-xl text-sm sm:text-base hover:brightness-110 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === "loading" ? "Submitting..." : "Join the Waiting List"}
       </button>

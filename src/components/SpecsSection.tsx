@@ -28,33 +28,33 @@ const benefits = [
 export default function SpecsSection() {
   return (
     <SectionWrapper id="why-titan">
-      <div className="text-center mb-16">
-        <p className="text-accent text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+      <div className="text-center mb-10 sm:mb-16">
+        <p className="text-accent text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-3 sm:mb-4">
           Why TITAN
         </p>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight">
           Built for card sellers who mean business
         </h2>
       </div>
 
       {/* Stats row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-16">
         {stats.map((s) => (
-          <div key={s.label} className="text-center">
-            <div className="text-accent text-4xl md:text-5xl font-bold mb-2">
+          <div key={s.label} className="text-center py-4 sm:py-0">
+            <div className="text-accent text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2">
               {s.value}
             </div>
-            <p className="text-text-secondary text-sm">{s.label}</p>
+            <p className="text-text-secondary text-xs sm:text-sm">{s.label}</p>
           </div>
         ))}
       </div>
 
       {/* Benefits */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
         {benefits.map((b) => (
-          <div key={b.title} className="glass rounded-2xl p-8">
-            <h3 className="text-lg font-semibold mb-3">{b.title}</h3>
-            <p className="text-text-secondary text-sm leading-relaxed">
+          <div key={b.title} className="glass rounded-2xl p-6 sm:p-8">
+            <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">{b.title}</h3>
+            <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
               {b.description}
             </p>
           </div>
