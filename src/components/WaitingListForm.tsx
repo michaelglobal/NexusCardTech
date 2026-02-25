@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 
 export default function WaitingListForm() {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ export default function WaitingListForm() {
     setStatus("loading");
     setErrorMsg("");
 
-    const { error } = await supabase.from("waiting_list_sign_up").upsert(
+    const { error } = await getSupabase().from("waiting_list_sign_up").upsert(
       {
         email: email.trim().toLowerCase(),
         name: name.trim() || null,
