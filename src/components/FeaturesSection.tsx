@@ -1,54 +1,62 @@
 import SectionWrapper from "./SectionWrapper";
-import FeatureCard from "./FeatureCard";
 
 const features = [
   {
-    title: "Automated Card Sleeving",
+    title: "Sleeves cards while you focus on sales",
     description:
-      "Feed your cards, TITAN sleeves them automatically. Precision-engineered for perfect penny sleeves every time.",
+      "Load your cards and walk away. TITAN handles the sleeving with consistent precision, freeing you to list, ship, or serve customers.",
   },
   {
-    title: "Real-Time Monitoring",
+    title: "Tracks every card to your inventory",
     description:
-      "Watch every card get sleeved live from your iOS device. WiFi-connected IoT updates streamed instantly.",
+      "Each card is logged as it passes through. Your digital inventory builds itself in real time, organised by category and value.",
   },
   {
-    title: "Session Tracking & Insights",
+    title: "Monitors sessions from any iOS device",
     description:
-      "Track sleeving sessions with detailed analytics - cards per minute, total value processed, trends over time.",
+      "Check progress from your iPhone or iPad. See cards sleeved, session value, and live status without being at the machine.",
   },
   {
-    title: "Inventory Management",
+    title: "Flags high-value cards automatically",
     description:
-      "Log every card to your digital inventory as it's sleeved. Organise by category, value, and condition.",
+      "Set price thresholds and TITAN alerts you with LED indicators when valuable cards pass through. Never miss a hit.",
   },
   {
-    title: "Custom Rules & LED Automation",
+    title: "Handles every major TCG category",
     description:
-      "Set price-based LED alerts and sorting rules. High-value cards trigger visual indicators automatically.",
+      "Pokemon, One Piece, Magic: The Gathering, sports cards and more. One machine for your entire operation.",
   },
   {
-    title: "iOS Companion App",
+    title: "Reports and insights that drive decisions",
     description:
-      "Full control from the TITAN app - pair devices, start sessions, view insights, all from your pocket.",
+      "See cards per session, average value, daily trends, and category breakdowns. Know exactly how your inventory is moving.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <SectionWrapper id="features">
-      <div className="text-center mb-14">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          Everything You Need
-        </h2>
-        <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-          TITAN combines hardware precision with intelligent software for a
-          seamless card sleeving experience.
+    <SectionWrapper id="what-titan-does">
+      <div className="text-center mb-16">
+        <p className="text-accent text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+          What TITAN Does
         </p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold max-w-2xl mx-auto leading-tight">
+          Everything your card business needs, automated
+        </h2>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((f) => (
-          <FeatureCard key={f.title} {...f} />
+          <div
+            key={f.title}
+            className="glass rounded-2xl p-7 hover:border-accent/30 transition-all duration-300"
+          >
+            <h3 className="text-base font-semibold mb-3 leading-snug">
+              {f.title}
+            </h3>
+            <p className="text-text-secondary text-sm leading-relaxed">
+              {f.description}
+            </p>
+          </div>
         ))}
       </div>
     </SectionWrapper>

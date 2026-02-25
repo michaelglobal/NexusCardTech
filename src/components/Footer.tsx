@@ -11,7 +11,7 @@ export default function Footer() {
             alt="Nexus Card Tech"
             width={120}
             height={120}
-            className="h-7 w-auto"
+            className="h-5 w-auto"
           />
           <span className="text-text-secondary text-sm">
             &copy; 2026 Nexus Card Tech. All rights reserved.

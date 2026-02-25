@@ -22,3 +22,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.glass {
+  background: rgba(10, 34, 53, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(26, 58, 80, 0.5);
+}

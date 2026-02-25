@@ -1,71 +1,62 @@
-"use client";
-
 import SectionWrapper from "./SectionWrapper";
 
-const specGroups = [
+const stats = [
+  { value: "10x", label: "Faster than hand sleeving" },
+  { value: "5+", label: "TCG categories supported" },
+  { value: "5", label: "Currencies built in" },
+  { value: "24/7", label: "Session monitoring" },
+];
+
+const benefits = [
   {
-    title: "Hardware",
-    items: [
-      "ESP32-S3 dual-core microcontroller",
-      "WiFi 802.11 b/g/n connectivity",
-      "Addressable RGB LED status ring",
-      "QR code provisioning",
-      "Precision card feed mechanism",
-    ],
+    title: "Save hours every week",
+    description:
+      "The average card seller spends 6+ hours a week on sleeving alone. TITAN handles it in a fraction of the time so you can focus on sourcing, listing, and selling.",
   },
   {
-    title: "Software",
-    items: [
-      "TITAN iOS companion app",
-      "Real-time Supabase sync",
-      "Session tracking & analytics",
-      "Custom rules engine",
-      "Multi-device support",
-    ],
+    title: "Never lose track of inventory",
+    description:
+      "Every card that passes through TITAN is logged to your digital inventory. No more spreadsheets, no more guesswork. Always know what you have and what it's worth.",
   },
   {
-    title: "Compatibility",
-    items: [
-      "Pokémon TCG",
-      "One Piece TCG",
-      "Magic: The Gathering",
-      "Sports cards",
-      "Multi-currency: GBP, USD, EUR, CAD, AUD",
-    ],
+    title: "Scale without hiring",
+    description:
+      "Growing your card business usually means more hands. TITAN lets you increase throughput without increasing headcount. One machine, unlimited potential.",
   },
 ];
 
 export default function SpecsSection() {
   return (
-    <SectionWrapper id="specs">
-      <div className="text-center mb-14">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          Technical Specs
-        </h2>
-        <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-          Built with serious hardware and smart software.
+    <SectionWrapper id="why-titan">
+      <div className="text-center mb-16">
+        <p className="text-accent text-sm font-semibold tracking-[0.2em] uppercase mb-4">
+          Why TITAN
         </p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold max-w-3xl mx-auto leading-tight">
+          Built for card sellers who mean business
+        </h2>
       </div>
+
+      {/* Stats row */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        {stats.map((s) => (
+          <div key={s.label} className="text-center">
+            <div className="text-accent text-4xl md:text-5xl font-bold mb-2">
+              {s.value}
+            </div>
+            <p className="text-text-secondary text-sm">{s.label}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Benefits */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {specGroups.map((group) => (
-          <div
-            key={group.title}
-            className="bg-surface border border-divider rounded-xl p-6"
-          >
-            <h3 className="text-accent font-semibold text-lg mb-4">
-              {group.title}
-            </h3>
-            <ul className="space-y-3">
-              {group.items.map((item) => (
-                <li
-                  key={item}
-                  className="text-text-secondary text-sm flex items-start gap-2"
-                >
-                  <span className="text-accent mt-0.5">•</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+        {benefits.map((b) => (
+          <div key={b.title} className="glass rounded-2xl p-8">
+            <h3 className="text-lg font-semibold mb-3">{b.title}</h3>
+            <p className="text-text-secondary text-sm leading-relaxed">
+              {b.description}
+            </p>
           </div>
         ))}
       </div>
