@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
 const steps = [
@@ -34,15 +31,8 @@ export default function HowItWorksSection() {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {steps.map((step, i) => (
-          <motion.div
-            key={step.number}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.15 }}
-            className="text-center"
-          >
+        {steps.map((step) => (
+          <div key={step.number} className="text-center">
             <div className="text-accent text-5xl font-bold mb-4 font-mono">
               {step.number}
             </div>
@@ -50,7 +40,7 @@ export default function HowItWorksSection() {
             <p className="text-text-secondary leading-relaxed">
               {step.description}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </SectionWrapper>

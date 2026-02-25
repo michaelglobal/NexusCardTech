@@ -1,27 +1,15 @@
-"use client";
-
-import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 
 function PhoneMockup({
   title,
   children,
-  index,
 }: {
   title: string;
   children: React.ReactNode;
-  index: number;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.15 }}
-      className="flex flex-col items-center gap-4"
-    >
+    <div className="flex flex-col items-center gap-4">
       <div className="w-[260px] h-[520px] bg-background border-2 border-divider rounded-[36px] p-3 shadow-2xl">
-        {/* Status bar */}
         <div className="bg-surface rounded-[28px] h-full overflow-hidden flex flex-col">
           <div className="h-10 flex items-center justify-center">
             <div className="w-20 h-5 bg-background rounded-full" />
@@ -30,7 +18,7 @@ function PhoneMockup({
         </div>
       </div>
       <p className="text-text-secondary text-sm font-medium">{title}</p>
-    </motion.div>
+    </div>
   );
 }
 
@@ -63,8 +51,7 @@ export default function AppPreviewSection() {
         </p>
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-8 overflow-x-auto">
-        {/* Dashboard screen */}
-        <PhoneMockup title="Dashboard" index={0}>
+        <PhoneMockup title="Dashboard">
           <MockPanel>
             <p className="text-xs text-text-secondary mb-1">Device Status</p>
             <div className="flex items-center gap-2">
@@ -93,13 +80,12 @@ export default function AppPreviewSection() {
           </MockPanel>
         </PhoneMockup>
 
-        {/* Active session screen */}
-        <PhoneMockup title="Active Session" index={1}>
+        <PhoneMockup title="Active Session">
           <MockPanel>
             <div className="flex items-center justify-between mb-2">
               <p className="text-xs text-text-secondary">Session #47</p>
               <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-status-green animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-status-green" />
                 <span className="text-xs text-status-green">Live</span>
               </div>
             </div>
@@ -124,8 +110,7 @@ export default function AppPreviewSection() {
           </MockPanel>
         </PhoneMockup>
 
-        {/* Insights screen */}
-        <PhoneMockup title="Insights" index={2}>
+        <PhoneMockup title="Insights">
           <MockPanel>
             <p className="text-xs text-text-secondary mb-2">7-Day Trend</p>
             <div className="flex items-end gap-1.5 h-16">

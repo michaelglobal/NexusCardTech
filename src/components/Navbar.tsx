@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,20 +15,22 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out border-b ${
         scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-divider"
-          : "bg-transparent"
+          ? "bg-background/80 backdrop-blur-lg border-divider/60"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Image
-          src="/nexus-card-tech-logo-white.png"
-          alt="Nexus Card Tech"
-          width={140}
-          height={32}
-          className="h-8 w-auto"
-        />
+        <Link href="/">
+          <Image
+            src="/nexus-card-tech-logo-white.png"
+            alt="Nexus Card Tech"
+            width={180}
+            height={40}
+            className="h-10 w-auto"
+          />
+        </Link>
         <a
           href="#waiting-list"
           className="bg-accent text-background font-semibold px-5 py-2.5 rounded-xl text-sm hover:brightness-110 transition-all"

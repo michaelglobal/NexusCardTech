@@ -1,30 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
       {/* Radial glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px]" />
+        <div className="w-[600px] h-[600px] rounded-full bg-accent/8 blur-[120px]" />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center gap-8"
-      >
-        <Image
-          src="/titan-nexus-card-tech.png"
-          alt="TITAN by Nexus Card Tech"
-          width={400}
-          height={100}
-          priority
-          className="w-72 sm:w-96 h-auto"
-        />
+      <div className="relative z-10 flex flex-col items-center gap-6">
+        <p className="text-accent text-sm font-semibold tracking-[0.2em] uppercase">
+          Introducing TITAN
+        </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-3xl">
           Automated Card Sleeving,{" "}
@@ -37,7 +24,7 @@ export default function HeroSection() {
           iPhone.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-2">
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
           <a
             href="#waiting-list"
             className="bg-accent text-background font-semibold px-8 py-3.5 rounded-xl text-base hover:brightness-110 transition-all"
@@ -51,7 +38,7 @@ export default function HeroSection() {
             See Features
           </a>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

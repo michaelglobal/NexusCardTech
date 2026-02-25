@@ -1,41 +1,33 @@
-"use client";
-
 import SectionWrapper from "./SectionWrapper";
 import FeatureCard from "./FeatureCard";
 
 const features = [
   {
-    icon: "⚡",
     title: "Automated Card Sleeving",
     description:
       "Feed your cards, TITAN sleeves them automatically. Precision-engineered for perfect penny sleeves every time.",
   },
   {
-    icon: "📡",
     title: "Real-Time Monitoring",
     description:
       "Watch every card get sleeved live from your iPhone. WiFi-connected IoT updates streamed instantly.",
   },
   {
-    icon: "📊",
     title: "Session Tracking & Insights",
     description:
       "Track sleeving sessions with detailed analytics — cards per minute, total value processed, trends over time.",
   },
   {
-    icon: "📦",
     title: "Inventory Management",
     description:
       "Log every card to your digital inventory as it's sleeved. Organise by category, value, and condition.",
   },
   {
-    icon: "🎨",
     title: "Custom Rules & LED Automation",
     description:
       "Set price-based LED alerts and sorting rules. High-value cards trigger visual indicators automatically.",
   },
   {
-    icon: "📱",
     title: "iOS Companion App",
     description:
       "Full control from NexusVision for iPhone — pair devices, start sessions, view insights, all from your pocket.",
@@ -55,8 +47,8 @@ export default function FeaturesSection() {
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {features.map((f, i) => (
-          <FeatureCard key={f.title} {...f} index={i} />
+        {features.map((f) => (
+          <FeatureCard key={f.title} {...f} />
         ))}
       </div>
     </SectionWrapper>
