@@ -21,19 +21,19 @@ export default function Navbar() {
           : "bg-transparent border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         <Link href="/">
           <Image
             src="/nexus-card-tech-logo-white.png"
             alt="Nexus Card Tech"
             width={180}
             height={40}
-            className="h-7 sm:h-10 w-auto"
+            className="h-8 sm:h-10 w-auto"
           />
         </Link>
         <a
           href="#waiting-list"
-          className="bg-accent text-background font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm hover:brightness-110 transition-all"
+          className="bg-accent text-background font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-sm hover:brightness-110 transition-all"
         >
           Join Waiting List
         </a>
