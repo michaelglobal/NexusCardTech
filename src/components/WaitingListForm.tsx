@@ -2,9 +2,6 @@
 
 import { useState, FormEvent } from "react";
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
 export default function WaitingListForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -18,14 +15,23 @@ export default function WaitingListForm() {
     setStatus("loading");
     setErrorMsg("");
 
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!supabaseUrl || !supabaseKey) {
+      setStatus("error");
+      setErrorMsg("Configuration error. Please try again later.");
+      return;
+    }
+
     try {
       const res = await fetch(
-        `${SUPABASE_URL}/functions/v1/waiting-list-signup`,
+        `${supabaseUrl}/functions/v1/waiting-list-signup`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            Authorization: `Bearer ${supabaseKey}`,
           },
           body: JSON.stringify({
             email: email.trim().toLowerCase(),
@@ -34,20 +40,28 @@ export default function WaitingListForm() {
         }
       );
 
-      const data = await res.json();
-
-      if (!res.ok || !data.success) {
+      if (!res.ok) {
+        const text = await res.text();
+        let message = "Something went wrong. Please try again.";
+        try {
+          const data = JSON.parse(text);
+          if (data.message) message = data.message;
+        } catch {
+          // response wasn't JSON
+        }
         setStatus("error");
-        setErrorMsg(data.message || "Something went wrong. Please try again.");
+        setErrorMsg(message);
         return;
       }
 
       setStatus("success");
       setEmail("");
       setName("");
-    } catch {
+    } catch (err) {
       setStatus("error");
-      setErrorMsg("Something went wrong. Please try again.");
+      setErrorMsg(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
     }
   }
 
