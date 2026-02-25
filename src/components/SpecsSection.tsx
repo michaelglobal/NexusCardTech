@@ -16,7 +16,7 @@ const specGroups = [
   {
     title: "Software",
     items: [
-      "NexusVision iOS companion app",
+      "TITAN iOS companion app",
       "Real-time Supabase sync",
       "Session tracking & analytics",
       "Custom rules engine",

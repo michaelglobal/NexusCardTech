@@ -10,12 +10,12 @@ const features = [
   {
     title: "Real-Time Monitoring",
     description:
-      "Watch every card get sleeved live from your iPhone. WiFi-connected IoT updates streamed instantly.",
+      "Watch every card get sleeved live from your iOS device. WiFi-connected IoT updates streamed instantly.",
   },
   {
     title: "Session Tracking & Insights",
     description:
-      "Track sleeving sessions with detailed analytics — cards per minute, total value processed, trends over time.",
+      "Track sleeving sessions with detailed analytics - cards per minute, total value processed, trends over time.",
   },
   {
     title: "Inventory Management",
@@ -30,7 +30,7 @@ const features = [
   {
     title: "iOS Companion App",
     description:
-      "Full control from NexusVision for iPhone — pair devices, start sessions, view insights, all from your pocket.",
+      "Full control from the TITAN app - pair devices, start sessions, view insights, all from your pocket.",
   },
 ];
 

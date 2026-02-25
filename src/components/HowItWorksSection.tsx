@@ -5,13 +5,13 @@ const steps = [
     number: "01",
     title: "Connect",
     description:
-      "Power on TITAN, scan the QR code with your iPhone, and provision WiFi in seconds. No manual configuration needed.",
+      "Power on TITAN, scan the QR code with your iOS device, and provision WiFi in seconds. No manual configuration needed.",
   },
   {
     number: "02",
     title: "Configure",
     description:
-      "Set card categories, define LED rules and price thresholds, and link your account through the NexusVision app.",
+      "Set card categories, define LED rules and price thresholds, and link your account through the TITAN app.",
   },
   {
     number: "03",

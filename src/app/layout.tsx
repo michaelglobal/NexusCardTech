@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TITAN by Nexus Card Tech — Automated Card Sleeving",
+  title: "TITAN by Nexus Card Tech - Automated Card Sleeving",
   description:
     "TITAN is an automated trading card sleeving system. Connect, configure, and sleeve your collection with real-time monitoring and IoT precision.",
   icons: {

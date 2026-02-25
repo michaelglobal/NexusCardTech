@@ -9,9 +9,9 @@ export default function Footer() {
           <Image
             src="/nexus-card-tech-icon-white.png"
             alt="Nexus Card Tech"
-            width={28}
-            height={28}
-            className="h-7 w-7"
+            width={120}
+            height={120}
+            className="h-7 w-auto"
           />
           <span className="text-text-secondary text-sm">
             &copy; 2026 Nexus Card Tech. All rights reserved.

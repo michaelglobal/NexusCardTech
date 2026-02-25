@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Nexus Card Tech",
+  title: "Terms of Service - Nexus Card Tech",
 };
 
 export default function TermsPage() {
@@ -33,8 +33,8 @@ export default function TermsPage() {
         3. Intellectual Property
       </h2>
       <p>
-        All content on this website — including text, graphics, logos, and
-        software — is the property of Nexus Card Tech and is protected by
+        All content on this website - including text, graphics, logos, and
+        software - is the property of Nexus Card Tech and is protected by
         applicable intellectual property laws. You may not reproduce, distribute,
         or create derivative works without our written permission.
       </p>

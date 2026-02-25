@@ -43,10 +43,10 @@ export default function AppPreviewSection() {
     <SectionWrapper id="app-preview">
       <div className="text-center mb-14">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          NexusVision App
+          TITAN App
         </h2>
         <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-          Full control from your iPhone. Monitor, configure, and track
+          Full control from your iOS device. Monitor, configure, and track
           everything.
         </p>
       </div>

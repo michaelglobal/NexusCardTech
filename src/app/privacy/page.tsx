@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Nexus Card Tech",
+  title: "Privacy Policy - Nexus Card Tech",
 };
 
 export default function PrivacyPage() {

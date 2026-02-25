@@ -2,7 +2,7 @@ import LegalPage from "@/components/LegalPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Nexus Card Tech",
+  title: "Contact - Nexus Card Tech",
 };
 
 export default function ContactPage() {
@@ -10,7 +10,7 @@ export default function ContactPage() {
     <LegalPage title="Contact Us">
       <p>
         We&apos;d love to hear from you. Whether you have questions about TITAN,
-        want to discuss partnerships, or need support — get in touch.
+        want to discuss partnerships, or need support - get in touch.
       </p>
 
       <h2 className="text-xl font-semibold text-text-primary pt-4">Email</h2>

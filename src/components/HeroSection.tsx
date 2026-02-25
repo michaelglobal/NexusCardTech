@@ -21,7 +21,7 @@ export default function HeroSection() {
         <p className="text-text-secondary text-lg sm:text-xl max-w-2xl leading-relaxed">
           TITAN is the world&apos;s first automated trading card sleeving
           system. Powered by IoT precision, monitored in real time from your
-          iPhone.
+          iOS device.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mt-4">

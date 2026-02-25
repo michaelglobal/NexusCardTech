@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { getSupabase } from "@/lib/supabase";
+
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 export default function WaitingListForm() {
   const [email, setEmail] = useState("");
@@ -16,34 +18,46 @@ export default function WaitingListForm() {
     setStatus("loading");
     setErrorMsg("");
 
-    const { error } = await getSupabase().from("waiting_list_sign_up").upsert(
-      {
-        email: email.trim().toLowerCase(),
-        name: name.trim() || null,
-        source: "website",
-      },
-      { onConflict: "email" }
-    );
+    try {
+      const res = await fetch(
+        `${SUPABASE_URL}/functions/v1/waiting-list-signup`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            email: email.trim().toLowerCase(),
+            name: name.trim() || null,
+          }),
+        }
+      );
 
-    if (error) {
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setEmail("");
+      setName("");
+    } catch {
       setStatus("error");
       setErrorMsg("Something went wrong. Please try again.");
-      return;
     }
-
-    setStatus("success");
-    setEmail("");
-    setName("");
   }
 
   if (status === "success") {
     return (
       <div className="bg-surface border border-status-green/30 rounded-xl p-8 text-center max-w-md mx-auto">
-        <div className="text-4xl mb-3">✓</div>
         <h3 className="text-xl font-semibold mb-2">You&apos;re on the list!</h3>
         <p className="text-text-secondary text-sm">
-          We&apos;ll notify you when TITAN is ready. Thank you for your
-          interest.
+          Check your inbox for a welcome email. We&apos;ll notify you when TITAN
+          is ready.
         </p>
         <button
           onClick={() => setStatus("idle")}
