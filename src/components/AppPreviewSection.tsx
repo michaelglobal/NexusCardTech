@@ -8,7 +8,7 @@ function PhoneMockup({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 shrink-0">
+    <div className="flex flex-col items-center gap-3 shrink-0 select-none pointer-events-none">
       <div className="w-[240px] sm:w-[250px] lg:w-[260px] h-[480px] sm:h-[500px] lg:h-[520px] bg-background border-2 border-divider rounded-[32px] sm:rounded-[36px] p-2.5 sm:p-3">
         <div className="bg-surface rounded-[24px] sm:rounded-[28px] h-full overflow-hidden flex flex-col">
           <div className="h-9 sm:h-10 flex items-center justify-center">
